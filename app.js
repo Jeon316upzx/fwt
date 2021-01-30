@@ -5,7 +5,8 @@ const logger = require('morgan');
 
 
 
-const indexRouter = require('./routes/index');
+const indexRouter = require('./routes/index.route');
+const validationRouter = require('./routes/validaterule.route');
 
 
 const app = express();
@@ -19,6 +20,7 @@ app.use(express.urlencoded({ extended: false }));
 
 
 app.use('/', indexRouter);
+app.use('/validate-rule', validationRouter);
 
 
 
